@@ -4,7 +4,7 @@ import {resolve} from 'path'
 
 const root=resolve(__dirname,'src','mpa')
 const outDir=resolve(__dirname,'docs')
-const assets=resolve(__dirname,'src','assets')
+const download=resolve(__dirname,'src','download')
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
         alias: {
             '@': resolve(__dirname, 'src'),
             '@root': root,
-            '@assets': assets
+            '@download': download,
         },
     },
     plugins: [vue()],
@@ -21,7 +21,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: resolve(root,'index.html'),
-                about: 'about.html',
+
             },
         },
         outDir,
